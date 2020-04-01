@@ -6,6 +6,8 @@ weight: 17
 
 ## Lab Architecture
 
-This Ref. Architecture
+## This is Work In Progress
 
-![architecture](/image/DataLakeArchitecture.jpeg)
+![wip](/image/workinprogress.png)
+
+

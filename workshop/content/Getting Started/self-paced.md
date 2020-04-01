@@ -5,9 +5,8 @@ chapter: true
 
 ## Running the workshop on your own
 
-* [Sign Up for AWS](#Sign-Up-for-AWS)
-* [Create an IAM User](#Create-an-IAM-User)
-* [Execute CFN Template](#Execute-CFN-Template)
+* [Sign Up for AWS](#sign-up-for-aws)
+* [Create an IAM User](#create-an-iam-User)
 
 
 ## Sign Up for AWS
@@ -63,4 +62,4 @@ If you don't want the URL for your sign-in page to contain your AWS account ID, 
 
 To verify the sign-in link for IAM users for your account, open the IAM console and check under IAM users sign-in link on the dashboard.
 
-## Execute CFN Template
+

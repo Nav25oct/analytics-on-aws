@@ -10,4 +10,7 @@ weight: 16
 
 In this Lab; we are going to learn how to visualize your data by using QuickSight
 
+## This is Work In Progress
+
+![wip](/image/workinprogress.png)
 

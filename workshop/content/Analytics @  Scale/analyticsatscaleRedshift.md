@@ -12,7 +12,7 @@ weight: 17
 * [Prerequisites](#prerequisites)
 * [Configure Client Tool](#configure-client-tool)
 * [Load data](#load-data)
-* [Restore 30TB RS Snapsort](#restore-redshift)
+* [Restore 30TB RS snapshot](#restore-30tb-rs-snapshot)
 
 
 

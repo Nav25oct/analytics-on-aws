@@ -7,3 +7,7 @@ weight: 11
 ## Securing Your Data Lake
 
 In this section; we are going to learn how to secure your data lake
+
+## This is Work In Progress
+
+![wip](/image/workinprogress.png)

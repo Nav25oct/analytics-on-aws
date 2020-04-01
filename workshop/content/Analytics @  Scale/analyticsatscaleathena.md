@@ -10,10 +10,10 @@ In this section of lab; we are going to learn importance of having right file ty
 
 ## Contents
 
-* [Athena - Text data](#athena-text-data)
-* [Athena - Parquet data](#athena-parquet-data)
+* [Athena Text data](#athena-text-data)
+* [Athena Parquet data](#athena-parquet-data)
 
-## Athena - Text data 
+## Athena Text data 
 
 In this section we are going to crawl 30 TB of text data using Glue Crawler and then run various query to analyze Athena performance.
 
@@ -99,7 +99,7 @@ Record count - 86.4 billion
 ![analyticsatathean](/image/athenatxt17.png)
 
 
-## Athena - Parquet data 
+## Athena Parquet data 
 
 Please follow steps describe in above section to crawl parquet data present in below s3 bucket
 

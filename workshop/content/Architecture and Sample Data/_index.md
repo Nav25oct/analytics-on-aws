@@ -6,6 +6,28 @@ weight: 3
 
 ## Lab Architecture
 
-This Ref. Architecture
+
+* [Refernce Architecture](#refernce-architecture)
+* [Sample Datasources](#sample-datasources)
+
+## Refernce Architecture
+
+In this Lab; we are showcasing how to build 
 
 ![architecture](/image/DataLakeArchitecture.jpeg)
+
+
+## Sample Datasources
+
+
+Data Set -
+
+You can find 30 TB of data here 
+
+```
+s3://redshift-downloads/TPC-DS/30TB/
+```
+
+```
+https://github.com/awslabs/amazon-redshift-utils/blob/master/src/ CloudDataWarehouseBenchmark/Cloud-DWB-Derived-from-TPCDS/30TB/ddl.sql   
+```
