@@ -19,10 +19,7 @@ In this Lab; we are showcasing how to build
 
 ## Sample Datasources
 
-
-Data Set -
-
-You can find 30 TB of data here 
+We are using tpcds dataset to perform these Labs
 
 ```
 s3://redshift-downloads/TPC-DS/30TB/

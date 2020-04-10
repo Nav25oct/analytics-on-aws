@@ -10,4 +10,9 @@ weight: 14
 
 In this Lab; we are going to learn how to visualize your data by using QuickSight
 
+https://aws.amazon.com/quicksight/gallery/
+
+![quicksight](/image/quicksightgallery.png)
+
+
 
