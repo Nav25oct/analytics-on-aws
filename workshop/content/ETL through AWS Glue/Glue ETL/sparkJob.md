@@ -17,7 +17,17 @@ In the previous step, you crawled S3 TPC-DS text file and discovered the schema 
 
 Here are steps you can follow to create IAM Role 
 
-IAM --> Roles --> Create Roles --> AWS Services (Select Glue) --> Attach permession Policies (check mark AWSGlueServiceRole) --> Create Role
+Create IAM Role for Glue
+
+* Login to the AWS console, click the drop down on “Services” and type “IAM” in the search bar.
+
+* Choose “Roles” in the IAM console and click on the tab “Create role” 
+
+* "Select type of trusted entity" as "AWS Service" and "Choose the service that will use this role" as "Glue"
+
+![gluejob2](/image/glueIAM1.png)
+
+
 
 ![gluejob2](/image/glueSparkJobRole.png)
 
@@ -32,7 +42,7 @@ Note - If you able to see new Glue 2.0 Version from drop-down in Glue Version; s
 
 ![gluejob4](/image/sparkglue20.png)
 
-5. select table which you want to convert to parquete - Hence in this example we are selecting **Catalog_retumn**
+5. select table which you want to convert to parquete - Hence in this example we are selecting **reason**
 
 ![gluejob4](/image/gluejob5.png)
 
@@ -48,51 +58,22 @@ Note - If there is no s3 bucket exists; please create new one.
 
 ![gluejob4](/image/gluejob7.png)
 
-8. Map the source columns to target columns.
+8. Map the source columns to target columns and click on **Save Job and edit script**
+
+Change the Column name, Data Type accordingly
+
+```
+    r_reason_sk               integer  ,
+    r_reason_id               char(16) ,
+    r_reason_desc             char(100)
+```
 
 ![gluejob4](/image/gluejob8.png)
-
-Change the Column name, Data Type
-
-```
-  cr_returned_date_sk               int4 ,  
-  cr_returned_time_sk               int4 , 
-  cr_item_sk                        int4 not null , 
-  cr_refunded_customer_sk           int4 ,
-  cr_refunded_cdemo_sk              int4 ,   
-  cr_refunded_hdemo_sk              int4 ,   
-  cr_refunded_addr_sk               int4 ,    
-  cr_returning_customer_sk          int4 ,
-  cr_returning_cdemo_sk             int4 ,   
-  cr_returning_hdemo_sk             int4 ,  
-  cr_returning_addr_sk              int4 ,   
-  cr_call_center_sk                 int4 ,      
-  cr_catalog_page_sk                int4 ,     
-  cr_ship_mode_sk                   int4 ,        
-  cr_warehouse_sk                   int4 ,        
-  cr_reason_sk                      int4 ,           
-  cr_order_number                   int8 not null,
-  cr_return_quantity                int4 ,     
-  cr_return_amount                  numeric(7,2) ,
-  cr_return_tax                     numeric(7,2) ,   
-  cr_return_amt_inc_tax             numeric(7,2) ,
-  cr_fee                            numeric(7,2) ,         
-  cr_return_ship_cost               numeric(7,2) , 
-  cr_refunded_cash                  numeric(7,2) ,    
-  cr_reversed_charge                numeric(7,2) ,  
-  cr_store_credit                   numeric(7,2) ,
-  cr_net_loss                       numeric(7,2) 
-
-```
-
-![gluejob9](/image/gluejob9.png)
-
 
 
 ![gluejob10](/image/gluejob10.png)
 
 
 Once job complete; you will able to see newly created files in your S3 bucket 
-
 
 ![gluejob10](/image/gluejob14.png)
