@@ -17,6 +17,10 @@ In this section of lab; we are going to learn importance of having right file ty
 
 In this section we are going to crawl 30 TB of text data using Glue Crawler and then run various query to analyze Athena performance.
 
+## Lab Architecture Diagram
+
+![athenaatscalearchitecture](/image/athenaatscalearchitecture.png)
+
 Step 1 - Crawl 30TB of txt data by using Glue Crawler
 
 Go to AWS Glue --> Crawler --> Add Crawler

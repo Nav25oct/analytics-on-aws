@@ -1,5 +1,5 @@
 ---
-title: "Development Endpoint"
+title: "Create Development Endpoint"
 chapter: true
 ---
 
@@ -62,6 +62,8 @@ You will find now 2 policies attached to the SageMaker role
 
 3. For the “Networking” choose the VPC, private subnet which is created in the above section and the default security group and then click “Next”.
 
+Note - Here you have multiple options to select. In this Lab; we are showcasing how to configure Dev endpoint on Prod like environment where you have private VPC, Subnet and security group. Also, VPC endpoint with S3 configured. If you do not have these available; you can select option **Skip Networking Information**
+
 ![sagemaker11](/image/sagemaker11.png)
 
 4. Leave the ssh public key blank and click “Next” to review. After review click “Finish”.
@@ -97,3 +99,4 @@ You will find now 2 policies attached to the SageMaker role
 6. Click “Open Jupyter” to open the notebook in browser.
 
 ![sagemaker18](/image/sagemaker19.png)
+
