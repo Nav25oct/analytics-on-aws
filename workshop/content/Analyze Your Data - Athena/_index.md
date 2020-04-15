@@ -30,7 +30,7 @@ CREATE EXTERNAL TABLE customer_address
   ca_state string ,            
   ca_zip string ,             
   ca_country string ,      
-  ca_gmt_offset numeric(5,2) ,  
+  ca_gmt_offset decimal(5,2) ,  
   ca_location_type string     
 ) 
 ROW FORMAT DELIMITED
@@ -168,6 +168,8 @@ AS select ca_state, count(ca_state) as num_of_cust_bystate from customer_address
 group by ca_state
 order by num_of_cust_bystate desc;
 ```
+
+Note - Replace S3 **external_location** with your your S3 Bucket 
 
 ```
 CREATE TABLE num_of_cust_by_state_partitioned
