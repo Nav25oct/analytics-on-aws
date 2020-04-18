@@ -1,8 +1,6 @@
 ---
 title: "Ingesting Batch Data - RDBMS"
 chapter: true
-pre: "- "
-weight: 40
 ---
 
 ## Overview
