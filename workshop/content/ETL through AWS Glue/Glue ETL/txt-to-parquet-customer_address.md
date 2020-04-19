@@ -291,5 +291,5 @@ S3 path where the script is stored
 
 * Provide the S3 location of your S3 
 
-![sparkjob](image/sparkjob.png)
+![sparkjob](/image/sparkjob.png)
 

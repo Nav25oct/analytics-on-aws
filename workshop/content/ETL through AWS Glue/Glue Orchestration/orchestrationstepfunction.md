@@ -1,8 +1,9 @@
 ---
-title: "Orchestration of Glue jobs using Step Functions"
-chapter: true
+title: "Orchestration - Step Functions"
+chapter: false
 ---
 
+## Orchestration of Glue jobs using Step Functions
 
 ### Abstract
 
