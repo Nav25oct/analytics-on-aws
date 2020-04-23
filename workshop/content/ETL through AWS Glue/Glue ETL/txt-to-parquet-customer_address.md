@@ -1,8 +1,9 @@
 ---
-title: "Glue ETL Script"
+title: "DevEndpoint - Building Glue ETL "
 chapter: true
 ---
 
+In this section of Lab; we are going to learn how to use Dev endpoint to develop Glue ETL script. 
 
 ### Find customer count by state
 
@@ -25,7 +26,7 @@ Create new files and set **Sparkmagic(PySpark)** and start running below script 
 
 
 ```pyspark
-## Importing Python library 
+## Importing Python libraries 
 
 import sys
 from awsglue.transforms import *
@@ -43,26 +44,6 @@ sqlContext = SQLContext(sc)
 from pyspark.sql import *
 ```
 
-    Starting Spark application
-
-
-
-<table>
-<tr><th>ID</th><th>YARN Application ID</th><th>Kind</th><th>State</th><th>Spark UI</th><th>Driver log</th><th>Current session?</th></tr><tr><td>2</td><td>application_1586891596511_0003</td><td>pyspark</td><td>idle</td><td><a target="_blank" href="http://ip-172-31-26-176.ec2.internal:20888/proxy/application_1586891596511_0003/">Link</a></td><td><a target="_blank" href="http://ip-172-31-28-195.ec2.internal:8042/node/containerlogs/container_1586891596511_0003_01_000001/livy">Link</a></td><td>✔</td></tr></table>
-
-
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-    SparkSession available as 'spark'.
-
-
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-
 ```pyspark
 ## Open text file from S3 location
 
@@ -71,24 +52,15 @@ from pyspark.sql import *
 customer_addressRDD = sc.textFile("s3://analytics-on-aws-demo-100gb/100GB/customer_address/")
 ```
 
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-
 ```pyspark
 ## Total count 
-
 customer_addressRDD.count()
 ```
 
-
 ```pyspark
 ## Preview first record
-
 customer_addressRDD.first()
 ```
-
 
 ```pyspark
 ## Convert RDD into Dataframe
@@ -113,20 +85,12 @@ customer_addressDF = customer_addressRDD.map(lambda ca : Row(
                                             ).toDF()
 ```
 
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-
 ```pyspark
 ## check dataframe schema
 
 customer_addressDF.printSchema()
 ```
-
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
+**Result of previous statement**
 
     root
      |-- ca_address_id: string (nullable = true)
@@ -149,10 +113,7 @@ customer_addressDF.printSchema()
 
 customer_addressDF.show(5)
 ```
-
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
+**Result of previous statement**
 
     +----------------+-------------+---------------+-------------+-----------------+-------------+----------------+--------+------------------+----------------+--------------+---------------+------+
     |   ca_address_id|ca_address_sk|        ca_city|   ca_country|        ca_county|ca_gmt_offset|ca_location_type|ca_state|    ca_street_name|ca_street_number|ca_street_type|ca_suite_number|ca_zip|
@@ -172,21 +133,11 @@ customer_addressDF.show(5)
 customer_addressDF.registerTempTable('customer_address')
 ```
 
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-
 ```pyspark
 ## Review records
 
 sqlContext.sql("select * from customer_address limit 10").show()
 ```
-
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
     +----------------+-------------+---------------+-------------+-----------------+-------------+----------------+--------+------------------+----------------+--------------+---------------+------+
     |   ca_address_id|ca_address_sk|        ca_city|   ca_country|        ca_county|ca_gmt_offset|ca_location_type|ca_state|    ca_street_name|ca_street_number|ca_street_type|ca_suite_number|ca_zip|
     +----------------+-------------+---------------+-------------+-----------------+-------------+----------------+--------+------------------+----------------+--------------+---------------+------+
@@ -210,18 +161,11 @@ customer_countby_state = sqlContext.sql("select ca_state, count(ca_state) as ca_
                 order by ca_state_count desc")
 ```
 
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-
 ```pyspark
+## Show() - List top 20 records from Data Frame
+
 customer_countby_state.show()
 ```
-
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
 
     +--------+--------------+
     |ca_state|ca_state_count|
@@ -256,11 +200,6 @@ sqlContext.setConf("spark.sql.parquet.compression.codec","gzip")
 customer_countby_state.write.parquet('s3://analytics-on-aws/tpcds/customer_count_state/');
 ```
 
-
-    FloatProgress(value=0.0, bar_style='info', description='Progress:', layout=Layout(height='25px', width='50%'),…
-
-
-
 ```pyspark
 
 ```
@@ -292,4 +231,21 @@ S3 path where the script is stored
 * Provide the S3 location of your S3 
 
 ![sparkjob](/image/sparkjob.png)
+
+Keep default option and Click on **Save job and edit script**
+
+![sparkjob](/image/sparkjob1.png)
+
+Click on Save and later run the job by clicking **Run Job**
+
+![sparkjob](/image/sparkjob2.png)
+
+If you like to capture Job materix and wanted to vide job execution - Check on **Job metrics** and **Spark UI**
+
+![sparkjob](/image/sparkjob3.png)
+
+
+![sparkjob](/image/sparkjob4.png)
+
+
 

@@ -1,4 +1,4 @@
 ---
-title: "Classifiers.md"
+title: "Classifiers"
 chapter: true
 ---

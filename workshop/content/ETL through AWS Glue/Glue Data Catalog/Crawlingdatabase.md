@@ -19,7 +19,7 @@ Let's create a JDBC crawler using the connection you just created to extract the
 
 4. In this section you select the crawler type [S3, JDBC & DynamoDB]. Select JDBC as a data store, mysql-connector as the connection. You can crawl an entire schema/database or you can call any specific table or table with a prefix.
 
-![gluecrawler][/image/gluecrawler4.png]
+![gluecrawler](/image/gluecrawler4.png)
 
 Note - if you want to crawl just single table provide **databasename/tablename** include path and if you have to exclude any table provide table name in **exclude pattens**
 
