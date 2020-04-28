@@ -11,6 +11,14 @@ In this section; we are going to learn how to bring how use glue dev endpoint to
 
 Prerequisite - Complete Lab **Create Development Endpoint** before this lab.
 
+and have below s3 bucket copied to your AWS account 
+
+```
+aws s3 cp --recursive s3://redshift-downloads/TPC-DS/100GB/customer_address/ s3://analytics-on-aws-demo-100gb/100GB/customer_address/
+
+```
+
+
 Click on Open Notebook
 
 ![glueNotebook](/image/glueNotebook.png)
