@@ -50,6 +50,25 @@ You will find now 2 policies attached to the SageMaker role
 ![sagemaker9](/image/sagemaker9.png)
 
 
+## Create VPC Endpoint
+
+1)	From the left-hand pane of the VPC console click on “Endpoints” to open that console and then click on “Create Endpoint”
+
+![vpcendpoint1](/image/vpcendpoint1.png)
+
+2)	For the “Service category” choose “AWS services” and for the “Service Name” choose the proper service name for s3 which is usually in the format “com.amazonaws.<region>.s3”
+
+![vpcendpoint1](/image/vpcendpoint2.png)
+
+3)	Click on the drop down to choose the current VPC and then click “Create endpoint”
+
+![vpcendpoint1](/image/vpcendpoint3.png)
+
+4)	After the VPC Endpoint is created click “Close” to take you to the Endpoint console
+
+![vpcendpoint1](/image/vpcendpoint4.png)
+
+
 ## Create a Glue Dev Endpoint
 
 1. Go to Glue console and click on **Dev endpoints** from the left and then click on **Add endpoint**
